@@ -1,3 +1,62 @@
 // Place all the styles related to the api/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.signup-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  // background: red;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 50%;
+  font-family: 'Lato', sans-serif;
+  color: #333;
+}
+
+.signup-page h1 {
+  color: #999;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 25px;
+}
+
+.signup-form label {
+  font-size: 24px;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+.signup-form input {
+  height: 42px;
+  font-size: 32px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.signup-form .submit-signup {
+  font-size: 24px;
+  background: #ff652f;
+  text-shadow: 0 -1px 0 #c83400;
+  border: 1px solid #ccc;
+  color: white;
+  border-radius: 4px;
+  padding: 10px 15px;
+  box-sizing: content-box;
+  font-family: 'Lato', sans-serif;
+}

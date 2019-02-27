@@ -1,3 +1,9 @@
+<script type=‘text/javascript’>
+  window.images = {
+    banana: '<%= image_url('banana.png') %>',
+ }
+</script>
+
 <% if logged_in? %>
   <script type="text/javascript">
     window.currentUser = <%= render(

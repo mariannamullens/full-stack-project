@@ -1,4 +1,6 @@
 import React from 'react';
+import ErrorsIndex from '../errors_index';
+// import banana from '../../../app/assets/images/banana.png'
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -20,12 +22,14 @@ class SignupForm extends React.Component {
   }
 
   render() {
-    const errors = this.props.errors.map(error => <li>{error}</li>)
     return (
-      <div>
-        <ul>{errors}</ul>
+      <div className="signup-page">
+        {/* <img src={window.images.banana} /> */}
         <form className="signup-form" onSubmit={this.handleSubmit}>
+          <h1>INTRODUCE YOURSELF</h1>
+          { this.props.errors.length > 0 && <ErrorsIndex errors={this.props.errors} />}
           <label>Hi there! My name is
+            <br></br>
             <input
               type="text"
               value={this.state.name}
@@ -34,6 +38,7 @@ class SignupForm extends React.Component {
           </label>
 
           <label>Here’s my email address:
+            <br></br>
             <input
               type="text"
               value={this.state.email}
@@ -42,6 +47,7 @@ class SignupForm extends React.Component {
           </label>
 
           <label>And here’s my password:
+            <br></br>
             <input
               type="password"
               value={this.state.password}

@@ -22,11 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // TOFIX: TEST
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
-    window.login = login;
-    window.logout = logout;
-    window.signup = signup;
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch;
+    // window.login = login;
+    // window.logout = logout;
+    // window.signup = signup;
   // testing
 
   ReactDOM.render(<Root store={store} />, root)

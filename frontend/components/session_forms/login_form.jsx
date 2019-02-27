@@ -6,6 +6,7 @@ class LoginForm extends React.Component {
 
     this.state = { email: "", password: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   handleInput(field) {
@@ -17,6 +18,16 @@ class LoginForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.login(this.state);
+  }
+
+  demoLogin(event) {
+    event.preventDefault();
+    const user = { email: "demouser@email.com", password: "password" };
+    this.props.login(user).then(() => this.props.history.push('/'));
+    //iterate over each element in an iterable object
+    //this.setState for each item in that iterable object
+    //do it for both login and password
+    //this.props.login!
   }
 
   render() {
@@ -37,6 +48,7 @@ class LoginForm extends React.Component {
           onChange={this.handleInput("password")}
         />
 
+        <button onClick={this.demoLogin}>Demo Login</button>
         <input type="submit" className="submit-input" value="Log in to Chitwise" />
       </form>
     )
