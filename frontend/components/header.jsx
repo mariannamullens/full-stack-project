@@ -26,14 +26,16 @@ class Header extends React.Component {
   render () {
     // TOFIX: move this to a functional component!
     const { currentUser, logout, isLoggedOut } = this.props;
+    const errors = this.props.errors.map( error => <li>{error}</li>)
     const notLoggedInLinks =
     <>
       <div className="not-logged-in">
         <button className="login-logout" onClick={this.showLogin}>Log in</button>
         <span>or</span>
-        <Link className="signup" to="">Sign up</Link>
+        <Link className="signup" to="/signup">Sign up</Link>
       </div>
       {this.state.showLogin && <LoginFormContainer />}
+      {this.props.errors.length > 0 && errors}
     </>
 
     const loggedInLinks = <button className="login-logout" onClick={this.handleLogout}>Logout</button>

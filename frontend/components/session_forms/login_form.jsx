@@ -20,23 +20,24 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    console.log(this.props.errors)
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="login-form" onSubmit={this.handleSubmit}>
         <input 
           type="text"
           value={this.state.email}
-          placeholder="email"
+          placeholder="Email address"
           onChange={this.handleInput("email")}
         />
 
         <input 
           type="password"
           value={this.state.password}
-          placeholder="password"
+          placeholder="Password"
           onChange={this.handleInput("password")}
         />
 
-        <input type="submit" value="Log in to Chitwise" />
+        <input type="submit" className="submit-input" value="Log in to Chitwise" />
       </form>
     )
   }
