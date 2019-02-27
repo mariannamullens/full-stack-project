@@ -10,30 +10,46 @@
   align-items: center;
   border-bottom: 1px solid #48be9d;
   box-shadow: 3px grey;
+  height: 48px;
+  padding: 0 250px;
 }
 
 .logo {
   text-transform: uppercase;
   font-family: 'Playfair Display SC', serif;
-  letter-spacing: 10px;
+  letter-spacing: 12px;
   font-weight: lighter;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .not-logged-in {
   display: flex;
-  width: 10%;
+  width: 17%;
   justify-content: space-between;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  align-items: center;
 }
 
 .header .signup {
-  height: 50px;
-  width: 50px;
-  background: orange;
+  height: 28px;
+  width: 65px;
+  background: #ff652f;
+  box-sizing: border-box;
+  padding: 6px 3px 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 #c83400;
+  border: 1px solid #ccc;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
 }
 
-.header .login {
-  height: 50px;
-  width: 50px;
-  background: #48be9d;
+.header .login-logout {
+  height: 28px;
+  width: 65px;
+  background: #5bc5a7;;
+  border-radius: 4px;
+  text-shadow: 0 -1px 0 #318970;
+  border: 1px solid #ccc;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
 }
