@@ -2,10 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { login, logout, signup } from './actions/session_actions';
 import configureStore from './store/store';
+import Root from './components/root';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
-  const store = configureStore();
+  // const store = configureStore();
+  let store;
+  if (window.currentUser) {
+    const preloadedState = {
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser }
+      },
+      session: { currentUserId: window.currentUser.id }
+    };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
 
   // TOFIX: TEST
     window.getState = store.getState;
@@ -15,5 +29,5 @@ document.addEventListener("DOMContentLoaded", () => {
   window.signup = signup;
   // testing
 
-  ReactDOM.render(<h1>Welcome to the party, pal</h1>, root)
+  ReactDOM.render(<Root store={store} />, root)
 });
