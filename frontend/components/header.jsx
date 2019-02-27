@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LoginFormContainer from './session_forms/login_form_container'
 
 class Header extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class Header extends React.Component {
 
     this.state = { showLogin: false }
     this.showLogin = this.showLogin.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   showLogin() {
@@ -16,16 +18,25 @@ class Header extends React.Component {
       this.setState({ showLogin: true });
   }
 
+  handleLogout(event) {
+    this.setState({ showLogin: false })
+    this.props.logout();
+  }
+
   render () {
+    // TOFIX: move this to a functional component!
     const { currentUser, logout, isLoggedOut } = this.props;
     const notLoggedInLinks =
-    <div className="not-logged-in">
-      <button className="login-logout" onClick={this.showLogin}>Log in</button>
-      <span>or</span>
-      <Link className="signup" to="">Sign up</Link>
-    </div>
+    <>
+      <div className="not-logged-in">
+        <button className="login-logout" onClick={this.showLogin}>Log in</button>
+        <span>or</span>
+        <Link className="signup" to="">Sign up</Link>
+      </div>
+      {this.state.showLogin && <LoginFormContainer />}
+    </>
 
-    const loggedInLinks = <button className="login-logout" onClick={logout}>Logout</button>
+    const loggedInLinks = <button className="login-logout" onClick={this.handleLogout}>Logout</button>
 
     return(
       <header className="header">
