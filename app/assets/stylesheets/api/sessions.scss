@@ -32,6 +32,54 @@
   align-items: center;
 }
 
+.dropdown {
+  font-size: 16px;
+  text-shadow: 0 -1px 0 #318970;
+  background: #5bc5a7;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logged-in {
+  display: flex;
+  width: 17%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  text-shadow: 0 -1px 0 #318970;
+  padding: 15px;
+}
+
+.logged-in img {
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+}
+
+.arrow-down {
+  border: solid white;
+  transform: rotate(45deg);
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+  margin: 5px;
+}
+
+.logged-in .logout-button {
+  background: white;
+  position: absolute;
+  top: 49px;
+  color: black;
+  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  padding: 5px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  width: 150px;
+  right: 250px;
+  height: 35px;
+}
+
 .header .signup {
   height: 28px;
   width: 65px;

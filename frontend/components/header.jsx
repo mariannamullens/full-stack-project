@@ -7,8 +7,9 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { showLogin: false }
+    this.state = { showLogin: false, showLogout: false }
     this.showLogin = this.showLogin.bind(this);
+    this.showLogout = this.showLogout.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
   }
 
@@ -18,6 +19,21 @@ class Header extends React.Component {
       :
       this.setState({ showLogin: true });
   }
+  
+  showLogin() {
+    this.state.showLogin ? 
+      this.setState({ showLogin: false }) 
+      :
+      this.setState({ showLogin: true });
+  }
+
+  // Just added this!
+  showLogout() {
+    this.state.showLogout ? 
+      this.setState({ showLogout: false }) 
+      :
+      this.setState({ showLogout: true });
+  }
 
   handleLogout(event) {
     this.setState({ showLogin: false })
@@ -25,7 +41,7 @@ class Header extends React.Component {
   }
 
   render () {
-    const { isLoggedOut } = this.props;
+    const { isLoggedOut, currentUser } = this.props;
 
     return(
       <header className="header">
@@ -37,7 +53,12 @@ class Header extends React.Component {
             errors={this.props.errors}
           />
           : 
-          <LoggedInContext handleLogout={this.handleLogout} /> }
+          <LoggedInContext 
+            handleLogout={this.handleLogout} 
+            currentUser={currentUser}
+            showLogout={this.showLogout}
+            booleanShowLogout={this.state.showLogout}
+          /> }
     </header>
     )
   }
@@ -61,7 +82,16 @@ const LoggedOutContext = (props) => {
 
 const LoggedInContext = (props) => {
   return (
-    <button className="login-logout" onClick={props.handleLogout}>Logout</button>
+    <div className="logged-in">
+      <img src={window.images.cactus} />
+      <button class="dropdown" onClick={props.showLogout}>
+        <h1>{props.currentUser.name}</h1>
+        <i class="arrow-down"></i>
+      </button>
+      { props.booleanShowLogout &&
+      <button className="logout-button" onClick={props.handleLogout}>Logout</button>
+      }
+    </div>
   )
 }
 
