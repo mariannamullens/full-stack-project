@@ -25,28 +25,44 @@ class Header extends React.Component {
   }
 
   render () {
-    // TOFIX: move this to a functional component!
-    const { currentUser, logout, isLoggedOut } = this.props;
-    const notLoggedInLinks =
-    <>
-      <div className="not-logged-in">
-        <button className="login-logout" onClick={this.showLogin}>Log in</button>
-        <span>or</span>
-        <Link className="signup" to="/signup">Sign up</Link>
-      </div>
-      {this.state.showLogin && <LoginFormContainer />}
-      {this.props.errors.length > 0 && <ErrorsIndex errors={this.props.errors} />}
-    </>
-
-    const loggedInLinks = <button className="login-logout" onClick={this.handleLogout}>Logout</button>
+    const { isLoggedOut } = this.props;
 
     return(
       <header className="header">
       <h2 className="logo">Chitwise</h2>
-      { isLoggedOut ? notLoggedInLinks : loggedInLinks }
+      { isLoggedOut ? 
+          <LoggedOutContext 
+            showLogin={this.showLogin} 
+            booleanShowLogin={this.state.showLogin}
+            errors={this.props.errors}
+          />
+          : 
+          <LoggedInContext handleLogout={this.handleLogout} /> }
     </header>
     )
   }
+}
+
+const LoggedOutContext = (props) => {
+  const { errors, booleanShowLogin, showLogin } = props;
+
+  return (
+    <>
+      <div className="not-logged-in">
+        <button className="login-logout" onClick={showLogin}>Log in</button>
+        <span>or</span>
+        <Link className="signup" to="/signup">Sign up</Link>
+      </div>
+      {booleanShowLogin && <LoginFormContainer />}
+      {errors.length > 0 && <ErrorsIndex errors={errors} />}
+    </>
+  )
+}
+
+const LoggedInContext = (props) => {
+  return (
+    <button className="login-logout" onClick={props.handleLogout}>Logout</button>
+  )
 }
 
 export default Header;

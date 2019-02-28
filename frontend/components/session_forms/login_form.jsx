@@ -24,10 +24,6 @@ class LoginForm extends React.Component {
     event.preventDefault();
     const user = { email: "demouser@email.com", password: "password" };
     this.props.login(user).then(() => this.props.history.push('/'));
-    //iterate over each element in an iterable object
-    //this.setState for each item in that iterable object
-    //do it for both login and password
-    //this.props.login!
   }
 
   render() {
