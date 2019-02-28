@@ -1,0 +1,84 @@
+.splash-body {
+  font-family: 'Lato', sans-serif;
+  color: #444;
+  padding-top: 21px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.splash {
+  position: relative;
+}
+
+.splash-body strong {
+  font-weight: bold;
+}
+
+.splash-body .banana-logo {
+  height: 64px;
+  width: 64px;
+  margin-right: 5px;
+}
+
+.splash-body h1 {
+  font-size: 68px;
+  font-weight: bold;
+}
+
+.splash-line-one {
+  display: flex;
+  justify-content: center;
+}
+
+.splash-body h2 {
+  font-size: 21px;
+}
+
+.splash-line-two {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.splash-line-three {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 23px;
+}
+
+.laptop {
+  width: 38%;
+  height: 38%;
+}
+
+.mobile {
+  width: 12%;
+  height: 12%;
+}
+
+.splash-footer {
+  padding: 20px;
+  background: #666;
+}
+
+.splash-footer {
+  height: 100px;
+  width: 100%;
+  color: white;
+  text-shadow: 0 -1px 0 #000000;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-line-one {
+  font-size: 24px;
+}
+
+.footer-line-two {
+  font-size: 14px;
+  margin-top: 15px;
+}
