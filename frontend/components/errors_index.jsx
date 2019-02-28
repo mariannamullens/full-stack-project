@@ -4,7 +4,10 @@ const ErrorsIndex = (props) => {
   const errors = props.errors.map(error => <li>{error}</li>)
 
   return (
-    <ul>{errors}</ul>
+    <div className="errors">
+      <h2>The following errors occurred:</h2>
+      <ul>{errors}</ul>
+    </div>
   )
 }
 

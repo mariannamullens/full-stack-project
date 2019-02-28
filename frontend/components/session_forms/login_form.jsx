@@ -47,10 +47,14 @@ class LoginForm extends React.Component {
           onChange={this.handleInput("password")}
         />
 
-        <button onClick={this.demoLogin}>Demo Login</button>
+        <button className="demo" onClick={this.demoLogin}>Demo Login</button>
         <input type="submit" className="submit-input" value="Log in to Chitwise" />
       </form>
     )
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LoginFormContainer from './session_forms/login_form_container'
+import LoginFormContainer from './session_forms/login_form_container';
+import ErrorsIndex from './errors_index';
 
 class Header extends React.Component {
   constructor(props) {
@@ -26,7 +27,6 @@ class Header extends React.Component {
   render () {
     // TOFIX: move this to a functional component!
     const { currentUser, logout, isLoggedOut } = this.props;
-    const errors = this.props.errors.map( error => <li>{error}</li>)
     const notLoggedInLinks =
     <>
       <div className="not-logged-in">
@@ -35,7 +35,7 @@ class Header extends React.Component {
         <Link className="signup" to="/signup">Sign up</Link>
       </div>
       {this.state.showLogin && <LoginFormContainer />}
-      {this.props.errors.length > 0 && errors}
+      {this.props.errors.length > 0 && <ErrorsIndex errors={this.props.errors} />}
     </>
 
     const loggedInLinks = <button className="login-logout" onClick={this.handleLogout}>Logout</button>

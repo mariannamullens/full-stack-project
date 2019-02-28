@@ -1,6 +1,5 @@
 import React from 'react';
 import ErrorsIndex from '../errors_index';
-// import banana from '../../../app/assets/images/banana.png'
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -59,6 +58,10 @@ class SignupForm extends React.Component {
         </form>
       </div>
     )
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 }
 

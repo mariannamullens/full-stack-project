@@ -69,6 +69,8 @@
   align-items: center;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
+  z-index: 1;
+  padding-bottom: 5px;
 }
 
 .login-form input {
@@ -80,9 +82,22 @@
   font-size: 14px;
 }
 
+.demo {
+  width: 75%;
+  height: 30px;
+  background: #ff652f;
+  border-radius: 4px;
+  text-shadow: 0 -1px 0 #c83400;
+  border: 1px solid #ccc;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+}
+
 .submit-input {
   width: 75%;
-  height: 100px;
+  height: 75px;
   background: #5bc5a7;;
   border-radius: 4px;
   text-shadow: 0 -1px 0 #318970;
@@ -91,4 +106,15 @@
   color: white;
   font-family: 'Lato', sans-serif;
   font-size: 14px;
+}
+
+.header .errors {
+  position: absolute;
+  top: 49px;
+  background: #c45;
+  left: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 250px;
 }
