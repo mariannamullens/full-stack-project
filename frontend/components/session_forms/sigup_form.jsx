@@ -24,7 +24,7 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="signup-page">
-        {/* <img src={window.images.banana} /> */}
+        <img src={window.images.banana} />
         <form className="signup-form" onSubmit={this.handleSubmit}>
           <h1>INTRODUCE YOURSELF</h1>
           { this.props.errors.length > 0 && <ErrorsIndex errors={this.props.errors} />}
