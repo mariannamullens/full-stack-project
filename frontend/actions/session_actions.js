@@ -29,19 +29,23 @@ export const logout = () => dispatch => {
     );
 };
 
-const receiveCurrentUser = ({users, session}) => ({
+export const receiveCurrentUser = ({users, session}) => {
+  return {
   type: RECEIVE_CURRENT_USER,
-  user: users[session.currentUserId]
-});
+  user: users[session.currentUserId],
+  users
+}};
 
 const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER,
 });
 
-const receiveErrors = errors => ({
+const receiveErrors = errors => {
+  console.log(errors);
+  return {
   type: RECEIVE_ERRORS,
   errors: errors.responseJSON
-});
+}};
 
 export const clearErrors = () => ({
   type: CLEAR_ERRORS
