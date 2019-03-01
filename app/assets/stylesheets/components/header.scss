@@ -3,13 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .header {
-  background: #5bc5a7;
+  background: $main-green;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #48be9d;
-  box-shadow: 3px grey;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
   height: 48px;
   padding: 0 250px;
   font-family: 'Lato', sans-serif;
@@ -34,35 +34,58 @@
 
 .dropdown {
   font-size: 16px;
-  text-shadow: 0 -1px 0 #318970;
-  background: #5bc5a7;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 
 .logged-in {
+  position: relative;
   display: flex;
-  width: 17%;
+  // width: 17%;
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
   text-shadow: 0 -1px 0 #318970;
+  height: 100%;
   padding: 15px;
+  box-sizing: border-box;
+}
+
+.logout-button:before {
+  content: '';
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid white;
+  position: absolute;
+  top: -7px;
+  right: 10px;
 }
 
 .logged-in img {
   height: 30px;
   width: 30px;
   border-radius: 20px;
+  margin-right: 10px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  border: 1px solid #3eaf8f;
 }
 
 .arrow-down {
-  border: solid white;
-  transform: rotate(45deg);
-  border-width: 0 1px 1px 0;
-  display: inline-block;
-  padding: 3px;
   margin: 5px;
+  border-top: 4px solid white;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  opacity: 0.3;
+}
+
+.logged-in:hover {
+  background: #48be9d;
+  cursor: pointer;
+}
+
+.logged-in:hover .arrow-down {
+  opacity: 1.0;
 }
 
 .logged-in .logout-button {
@@ -73,11 +96,16 @@
   border: 1px solid rgba(0,0,0,0.2);
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   padding: 5px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-radius: 3px;
   width: 150px;
-  right: 250px;
+  right: 0px;
   height: 35px;
+}
+
+.logout-button:hover {
+  cursor: pointer;
+  background: #48be9d;
+  color: white;
 }
 
 .header .signup {
@@ -96,64 +124,10 @@
 .header .login-logout {
   height: 28px;
   width: 65px;
-  background: #5bc5a7;;
   border-radius: 4px;
   text-shadow: 0 -1px 0 #318970;
   border: 1px solid #ccc;
   border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
-}
-
-.login-form {
-  position: absolute;
-  top: 49px;
-  display: flex;
-  flex-direction: column;
-  right: 250px;
-  width: 300px;
-  font-family: 'Lato', sans-serif;
-  background: #eee;
-  height: 150px;
-  justify-content: space-around;
-  align-items: center;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  z-index: 1;
-  padding-bottom: 5px;
-}
-
-.login-form input {
-  width: 75%;
-  height: 20%;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-family: 'Lato', sans-serif;
-  font-size: 14px;
-}
-
-.demo {
-  width: 75%;
-  height: 30px;
-  background: #ff652f;
-  border-radius: 4px;
-  text-shadow: 0 -1px 0 #c83400;
-  border: 1px solid #ccc;
-  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
-  color: white;
-  font-family: 'Lato', sans-serif;
-  font-size: 14px;
-}
-
-.submit-input {
-  width: 75%;
-  height: 75px;
-  background: #5bc5a7;;
-  border-radius: 4px;
-  text-shadow: 0 -1px 0 #318970;
-  border: 1px solid #ccc;
-  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
-  color: white;
-  font-family: 'Lato', sans-serif;
-  font-size: 14px;
 }
 
 .header .errors {
