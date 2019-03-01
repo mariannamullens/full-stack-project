@@ -84,9 +84,9 @@ const LoggedInContext = (props) => {
   return (
     <div className="logged-in">
       <img src={window.images.cactus} />
-      <button class="dropdown" onClick={props.showLogout}>
+      <button className="dropdown" onClick={props.showLogout}>
         <h1>{props.currentUser.name}</h1>
-        <i class="arrow-down"></i>
+        <i className="arrow-down"></i>
       </button>
       { props.booleanShowLogout &&
       <button className="logout-button" onClick={props.handleLogout}>Logout</button>

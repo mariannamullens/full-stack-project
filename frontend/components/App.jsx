@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import HeaderContainer from './header_container';
 import SignupFormContainer from './session_forms/signup_form_container'
 import Splash from './splash/splash';
@@ -11,7 +11,8 @@ const App = () => (
     <Switch>
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <ProtectedRoute path="/dashboard" component={Dashboard} />
-      <AuthRoute path="/" component={Splash} />
+      <AuthRoute exact path="/" component={Splash} />
+      <Redirect to="/" />
     </Switch>
   </div>
 );
