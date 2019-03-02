@@ -30,7 +30,7 @@ class FriendsIndex extends React.Component {
 
 const FriendsIndexItem = (props) => (
   <li className="friends-index-item">
-    <i class="fas fa-user"></i>
+    <i className="fas fa-user"></i>
     {props.friend.name}
   </li>
 )
