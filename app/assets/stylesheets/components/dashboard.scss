@@ -1,0 +1,25 @@
+.middle-dash {
+  width: 558px;
+  height: 800px;
+  // background: greenyellow;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
+
+.left-nav {
+  width: 200px;
+  height: 800px;
+  // background: lavenderblush;
+}
+
+.right-panel {
+  width: 200px;
+  height: 800px;
+  // background: blueviolet;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+}

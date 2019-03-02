@@ -9,7 +9,7 @@ class Api::FriendsController < ApplicationController
     @friendship = Friend.new(user_id: @user.id, friend_id: @friend.id)
 
     if @friendship.save
-      render 'api/users/show'
+      render 'api/friends/show'
     else
       render json: @friendship.errors.full_messages, status: 422
     end

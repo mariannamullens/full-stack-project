@@ -14,10 +14,7 @@ class Header extends React.Component {
   }
 
   showLogin() {
-    this.state.showLogin ? 
-      this.setState({ showLogin: false }) 
-      :
-      this.setState({ showLogin: true });
+    this.setState((state) => ({showLogin: !state.showLogin}));
   }
 
   showLogout() {
