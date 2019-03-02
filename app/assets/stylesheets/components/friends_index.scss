@@ -1,0 +1,33 @@
+.friends-index {
+  color: #999;
+  width: 172px;
+}
+
+.friends-index header {
+  display: flex;
+  justify-content: space-between;
+  background: #f6f6f6;
+  margin-left: 5px;
+  color: #ccc;
+  font-size: 11px;
+  margin-top: 5px;
+  border-top: 1px solid #f3f3f3;
+  border-bottom: 1px solid #eee;
+  padding: 5px;
+}
+
+.friends-index h2 {
+  text-transform: uppercase;
+}
+
+.friends-index-item {
+  color: inherit;
+  height: 19px;
+  font-size: 14px;
+  padding: 3px 8px 2px 8px;
+  border-left: 6px solid #fff;
+}
+
+.friends-index-item i {
+  margin-right: 5px;
+}

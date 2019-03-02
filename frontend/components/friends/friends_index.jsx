@@ -1,4 +1,5 @@
 import React from 'react';
+import AddFriend from './add_friend';
 
 class FriendsIndex extends React.Component {
 
@@ -18,7 +19,7 @@ class FriendsIndex extends React.Component {
       <div className="friends-index">
         <header>
           <h2>Friends</h2>
-          {/* <AddFriend /> */}
+          <AddFriend />
         </header>
 
         <ul>{friends}</ul>
@@ -28,7 +29,10 @@ class FriendsIndex extends React.Component {
 };
 
 const FriendsIndexItem = (props) => (
-  <li>{props.friend.name}</li>
+  <li className="friends-index-item">
+    <i class="fas fa-user"></i>
+    {props.friend.name}
+  </li>
 )
 
 export default FriendsIndex;

@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #48be9d;
+  border-bottom: 1px solid $border-shadow-green;
   box-shadow: 0 1px 4px rgba(0,0,0,0.4);
   height: 48px;
   padding: 0 250px;
@@ -46,7 +46,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
-  text-shadow: 0 -1px 0 #318970;
+  text-shadow: 0 -1px 0 $text-shadow-green;
   height: 100%;
   padding: 15px;
   box-sizing: border-box;
@@ -80,7 +80,7 @@
 }
 
 .logged-in:hover {
-  background: #48be9d;
+  background: $border-shadow-green;
   cursor: pointer;
 }
 
@@ -104,20 +104,20 @@
 
 .logout-button:hover {
   cursor: pointer;
-  background: #48be9d;
+  background: $border-shadow-green;
   color: white;
 }
 
 .header .signup {
   height: 28px;
   width: 65px;
-  background: #ff652f;
+  background: $main-orange;
   box-sizing: border-box;
   padding: 6px 3px 5px 10px;
   border-radius: 4px;
   text-decoration: none;
-  text-shadow: 0 -1px 0 #c83400;
-  border: 1px solid #ccc;
+  text-shadow: 0 -1px 0 $text-shadow-red;
+  border: 1px solid $gray;
   border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
 }
 
@@ -125,7 +125,7 @@
   height: 28px;
   width: 65px;
   border-radius: 4px;
-  text-shadow: 0 -1px 0 #318970;
+  text-shadow: 0 -1px 0 $text-shadow-green;
   border: 1px solid #ccc;
   border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
 }
@@ -133,7 +133,7 @@
 .header .errors {
   position: absolute;
   top: 49px;
-  background: #c45;
+  background: $error-red;
   left: 0px;
   width: 100%;
   display: flex;

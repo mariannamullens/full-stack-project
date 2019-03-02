@@ -2,8 +2,8 @@
   width: 558px;
   height: 800px;
   // background: greenyellow;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  border-left: 1px solid $gray;
+  border-right: 1px solid $gray;
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
 }
 
@@ -22,4 +22,5 @@
 .dashboard {
   display: flex;
   justify-content: center;
+  font-family: 'Lato', sans-serif;
 }
