@@ -12,6 +12,7 @@ export const createFriend = friend => dispatch => {
 };
 
 export const receiveFriendErrors = errors => {
+  console.log(errors)
   return {
     type: RECEIVE_FRIEND_ERRORS,
     errors: errors.responseJSON

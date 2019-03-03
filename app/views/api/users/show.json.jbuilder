@@ -10,8 +10,8 @@ end
 
 json.set! "friends" do
   @user.friendships.each do |friendship|
-    json.set! friendship.id do
-      json.extract! friendship, :id
+    json.set! friendship.friend_id do
+      # json.extract! friendship, :id
       json.userId friendship.user_id
       json.friendId friendship.friend_id
     end

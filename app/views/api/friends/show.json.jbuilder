@@ -1,5 +1,5 @@
 json.friendId @friend.id
-json.friendshipId @friendship.id
+# json.friendshipId @friendship.id
 
 json.set! "users" do
   json.set! @friend.id do
@@ -8,9 +8,9 @@ json.set! "users" do
 end
 
 json.set! "friends" do
-  json.set! @friendship.id do
-    json.extract! @friendship, :id
-    json.userId @friendship.user_id
-    json.friendId @friendship.friend_id
+  json.set! @friend.id do
+    # json.extract! @friendship, :id
+    json.userId @user.id
+    json.friendId @friend.id
   end
 end

@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import AddFriendModal from './add_friend_modal';
+import AddFriendModalContainer from './add_friend_modal_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -10,7 +10,7 @@ function Modal({ modal, closeModal }) {
   let component;
   switch (modal) {
     case 'addFriend':
-      component = <AddFriendModal />;
+      component = <AddFriendModalContainer />;
       break;
     default:
       return null;
