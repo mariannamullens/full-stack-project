@@ -8,4 +8,16 @@
 
 User.delete_all
 
-User.create(name: "Liz Lemon", email: "llemon@nbcuni.com", password: "password")
+liz = User.create(name: "Liz Lemon", email: "llemon@nbcuni.com", password: "password")
+jack = User.create(email: "jdonaghy@nbcuni.com", name: "John Francis Donaghy", password: "password")
+jenna = User.create(email: "jmaroney@nbcuni.com", name: "Jenna Maroney", password: "password")
+kenneth = User.create(email: "kenneth@nbcuni.com", name: "Kenneth", password: "password")
+tracy = User.create(email: "tjordan@nbcuni.com", name: "Tracy Jordan", password: "password")
+
+Friend.delete_all
+
+Friend.create(user_id: liz.id, friend_id: jack.id)
+Friend.create(user_id: liz.id, friend_id: jenna.id)
+Friend.create(user_id: jack.id, friend_id: liz.id)
+Friend.create(user_id: liz.id, friend_id: kenneth.id)
+Friend.create(user_id: liz.id, friend_id: tracy.id)
