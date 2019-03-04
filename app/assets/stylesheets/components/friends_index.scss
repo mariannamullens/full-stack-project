@@ -31,6 +31,14 @@
   text-overflow: ellipsis;
 }
 
+.friends-index-item:hover {
+  background: #eee;
+}
+
 .friends-index-item i {
   margin-right: 5px;
+}
+
+.add-friend:hover {
+  color: #5bc5a7;
 }

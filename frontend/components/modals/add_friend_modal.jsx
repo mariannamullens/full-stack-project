@@ -24,6 +24,9 @@ class AddFriendModal extends React.Component {
       <header>
         <img src={window.images.banana} />
         <h2>Invite friends</h2>
+        <button className="close-modal" onClick={this.props.closeModal}>
+          x
+        </button>
       </header>
 
       <form onSubmit={this.handleSubmit}>
