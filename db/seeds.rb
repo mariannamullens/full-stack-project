@@ -21,3 +21,19 @@ Friend.create(user_id: liz.id, friend_id: jenna.id)
 Friend.create(user_id: jack.id, friend_id: liz.id)
 Friend.create(user_id: liz.id, friend_id: kenneth.id)
 Friend.create(user_id: liz.id, friend_id: tracy.id)
+
+Bill.delete_all
+
+bill1 = Bill.create(creator_id: liz.id, description: "carp po boy with extra chuckle", payer_id: jack.id, amount: 15.00)
+bill2 = Bill.create(creator_id: jack.id, description: "decorative air holders", note: "for 100 episodes and an emmy...magazine cover story", payer_id: jack.id, amount: 15.00)
+bill3 = Bill.create(creator_id: liz.id, description: "3 bear costumes", payer_id: kenneth.id, amount: 100.00)
+bill4 = Bill.create(creator_id: liz.id, description: "subway fare to taxi dispatch", payer_id: liz.id, amount: 100.00)
+
+UserBillShare.delete_all
+
+UserBillShare.create(user_id: liz.id, bill_id: bill1.id, amount: 7.50)
+UserBillShare.create(user_id: jack.id, bill_id: bill1.id, amount: 7.50)
+UserBillShare.create(user_id: liz.id, bill_id: bill2.id, amount: 15.00)
+UserBillShare.create(user_id: liz.id, bill_id: bill3.id, amount: 100.00)
+UserBillShare.create(user_id: liz.id, bill_id: bill4.id, amount: 50.00)
+UserBillShare.create(user_id: kenneth.id, bill_id: bill4.id, amount: 50.00)

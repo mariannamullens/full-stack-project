@@ -15,7 +15,7 @@
 class Bill < ApplicationRecord
   validates :description, :amount, presence: true
 
-  has_many :user_bill_shares
+  has_many :user_bill_shares, dependent: :destroy
 
   has_many :users,
     through: :user_bill_shares,
