@@ -1,0 +1,1 @@
+json.extract! bill, :id, :creator_id, :description, :note, :payer_id, :amount
