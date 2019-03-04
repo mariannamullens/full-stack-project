@@ -1,3 +1,5 @@
+json.billId @bill.id
+
 json.bills do
   json.set! @bill.id do
     json.partial! '/api/bills/bill', bill: @bill

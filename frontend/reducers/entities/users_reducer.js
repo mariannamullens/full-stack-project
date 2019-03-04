@@ -7,9 +7,7 @@ const usersReducer = (oldState = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      // newState[action.user.id] = action.user;
       return action.users;
-      // return newState;
     case RECEIVE_FRIEND:
       newState[action.friendId] = action.userInfo;
       return newState;
