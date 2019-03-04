@@ -29,6 +29,12 @@ class User < ApplicationRecord
     through: :friendships,
     source: :friend
 
+  has_many :user_bill_shares
+
+  has_many :bills,
+    through: :user_bill_shares,
+    source: :bill
+
   accepts_nested_attributes_for :friendships, :friends
 
   def self.find_by_credentials(email, password)
