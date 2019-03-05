@@ -28,6 +28,7 @@ bill1 = Bill.create(creator_id: liz.id, description: "carp po boy with extra chu
 bill2 = Bill.create(creator_id: jack.id, description: "decorative air holders", note: "for 100 episodes and an emmy...magazine cover story", payer_id: jack.id, amount: 15.00)
 bill3 = Bill.create(creator_id: liz.id, description: "3 bear costumes", payer_id: kenneth.id, amount: 100.00)
 bill4 = Bill.create(creator_id: liz.id, description: "subway fare to taxi dispatch", payer_id: liz.id, amount: 100.00)
+bill5 = Bill.create(creator_id: tracy.id, description: "fcc violations", payer_id: liz.id, amount: 5000.00)
 
 UserBillShare.delete_all
 
@@ -37,3 +38,4 @@ UserBillShare.create(user_id: liz.id, bill_id: bill2.id, amount: 15.00)
 UserBillShare.create(user_id: liz.id, bill_id: bill3.id, amount: 100.00)
 UserBillShare.create(user_id: liz.id, bill_id: bill4.id, amount: 50.00)
 UserBillShare.create(user_id: kenneth.id, bill_id: bill4.id, amount: 50.00)
+UserBillShare.create(user_id: tracy.id, bill_id: bill5.id, amount: 5000.00)

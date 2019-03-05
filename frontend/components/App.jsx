@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import SignupFormContainer from './session_forms/signup_form_container'
 import Splash from './splash/splash';
-import Dashboard from './dashboard';
+import Dashboard from './dashboard/dashboard';
 import { ProtectedRoute, AuthRoute } from '../util/route_util';
 import Modal from './modals/modal';
 

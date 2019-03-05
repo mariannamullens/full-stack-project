@@ -1,7 +1,6 @@
 .middle-dash {
   width: 558px;
   height: 800px;
-  // background: greenyellow;
   border-left: 1px solid $gray;
   border-right: 1px solid $gray;
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
@@ -10,13 +9,11 @@
 .left-nav {
   width: 200px;
   height: 800px;
-  // background: lavenderblush;
 }
 
 .right-panel {
   width: 200px;
   height: 800px;
-  // background: blueviolet;
 }
 
 .dashboard {
@@ -70,5 +67,70 @@
 }
 
 .aggregate-type.green h4 {
+  color: $main-green;
+}
+
+.round-icon {
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  margin-right: 10px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  border: 1px solid #eee;
+}
+
+.middle-dash-body {
+  display: flex;
+}
+
+.owe-index {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-top: 15px
+}
+
+.owed-index {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border-left: 1px solid #eee;
+  margin-top: 15px
+}
+
+.owe-index h2, .owed-index h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #999;
+  font-weight: black;
+  font-family: 'Lato', sans-serif;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.owed-index h2 {
+  margin-left: 150px;
+}
+
+.owed-index-item, .owe-index-item {
+  display: flex;
+  margin-left: 15px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.owed-index-item .name, .owe-index-item .name {
+  font-size: 16px;
+}
+
+.owed-index-item .amount, .owe-index-item .amount {
+  font-size: 13px;
+}
+
+.owe-index-item .amount {
+  color: #ff652f;
+}
+
+.owed-index-item .amount {
   color: $main-green;
 }

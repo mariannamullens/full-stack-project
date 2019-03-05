@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import MiddleDashHeader from './middle_dash_header';
-import { totalBalance, oweAmount, owedAmount } from '../reducers/balance_aggregates_selector';
+import { totalBalance, oweAmount, owedAmount } from '../../reducers/balance_aggregates_selector';
 
 const mapStateToProps = state => ({
   totalBalance: totalBalance(state),

@@ -17,12 +17,12 @@ export const balancePerFriend = ({entities, balanceAggregates}) => {
       owedAmt = balanceAggregates.owed[friendId].amount;
     }
 
-    return { friendId: friendId, amount: owedAmt - oweAmt };
+    return { friend: entities.users[friendId], amount: owedAmt - oweAmt };
   });
 };
 
 export const totalBalance = state => {
-  return owedAmount(state) - oweAmount(state);
+  return (owedAmount(state) - oweAmount(state)).toFixed(2);
 };
 
 export const owedAmount = state => {
@@ -33,7 +33,7 @@ export const owedAmount = state => {
     total += friendHash.amount;
   });
 
-  return total;
+  return total.toFixed(2);
 };
 
 export const oweAmount = state => {
@@ -44,5 +44,25 @@ export const oweAmount = state => {
     total += friendHash.amount;
   });
 
-  return (-1 * total);
+  return (-1 * total).toFixed(2);
+};
+
+export const oweFriends = state => {
+  let oweArr = balancePerFriend(state).filter(obj => obj.amount < 0);
+
+  oweArr.forEach( object => {
+    object.amount = (-1 * object.amount).toFixed(2);
+  });
+
+  return oweArr;
+};
+
+export const owedFriends = state => {
+  let owedArr =  balancePerFriend(state).filter(obj => obj.amount > 0);
+
+  owedArr.forEach(object => {
+    object.amount = object.amount.toFixed(2);
+  });
+
+  return owedArr;
 };
