@@ -17,7 +17,6 @@ class Api::FriendsController < ApplicationController
     if @user.save
       render 'api/friends/show'
     else
-      # binding.pry
       render json: @user.errors.full_messages, status: 422
     end
   end

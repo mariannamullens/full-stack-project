@@ -29,13 +29,15 @@ export const logout = () => dispatch => {
     );
 };
 
-export const receiveCurrentUser = ({users, session, friends, bills}) => {
+export const receiveCurrentUser = ({ users, session, friends, bills, balanceAggregates, userBillShares }) => {
   return {
   type: RECEIVE_CURRENT_USER,
   user: users[session.currentUserId],
   users,
   friends,
-  bills
+  bills,
+  balanceAggregates,
+  userBillShares
 }};
 
 const logoutCurrentUser = () => ({
