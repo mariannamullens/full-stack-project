@@ -141,7 +141,7 @@
   margin-left: 10px;
 }
 
-.expense-detail i {
+.expense-detail .i-border i {
   padding: 25px 8px;
   background: #eee;
   font-size: 32px;
@@ -171,6 +171,7 @@
   color: #333333;
   font-size: 13px;
   width: 45%;
+  margin-right: 50px;
 }
 
 .expense-detail .body-info {
@@ -185,6 +186,7 @@
   font-size: 12px;
   text-transform: uppercase;
   color: #999;
+  margin-bottom: 4px;
 }
 
 .notes .note {
@@ -192,6 +194,15 @@
   border-radius: 5px;
   padding: 6px 8px;
   word-wrap: break-word;
-  font-size: 11px;
+  font-size: 13px;
   color: #666;
+  background: #ffffe9;
+  color: #333333;
+  width: 85%;
+}
+
+.notes .note h2 {
+  font-weight: bold;
+  font-color: black;
+  margin-bottom: 4px;
 }

@@ -41,8 +41,13 @@ const ExpensesIndexItemDetail = props => {
           </section>
 
           <section className="notes">
-            <p>Notes and Comments</p>
-            <div className="note">{note}</div>
+            <p><i class="fas fa-comment"></i> Notes and Comments</p>
+          { note && 
+            <div className="note">
+              <h2>Notes</h2>
+              {note}
+            </div>
+          }
           </section>
         </div>
       </div>
