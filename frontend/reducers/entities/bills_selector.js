@@ -27,16 +27,23 @@ export const lentBorrowedContext = (bill, state) => {
     context.text = "you lent";
     context.amount = currentUserLent(bill, state);
     context.paidText = "you paid";
+    context.shareText = `You paid ${bill.amount} and owe ${currentUserShare(bill, state)}`;
   } else {
     context.text = `you borrowed`;
     context.amount = currentUserShare(bill, state);
     context.paidText = `${state.entities.users[bill.payerId].name} paid`;
+    context.shareText = `${state.entities.users[bill.payerId].name} paid ${bill.amount} and owes ${otherUserShare(bill, state, bill.payerId)}`;
   }
   return context;
 };
 
 export const currentUserShare = (bill, state) => {
   let objArr = readableShares(bill, state).filter(share => share.userId === state.session.currentUserId)
+  return objArr[0] ? objArr[0].amount : "0.00";
+};
+
+export const otherUserShare = (bill, state, id) => {
+  let objArr = readableShares(bill, state).filter(share => share.userId === id);
   return objArr[0] ? objArr[0].amount : "0.00";
 };
 
