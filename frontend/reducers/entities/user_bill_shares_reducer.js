@@ -7,7 +7,7 @@ const userBillSharesReducer = (oldState = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      return action.userBillShares;
+      return action.userBillShares ? action.userBillShares : {} ;
     case RECEIVE_BILL:
       return Object.assign({}, newState, action.userBillShares);
     default:

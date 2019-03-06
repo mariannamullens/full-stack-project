@@ -5,6 +5,7 @@ import Splash from './splash/splash';
 import Dashboard from './dashboard/dashboard';
 import { ProtectedRoute, AuthRoute } from '../util/route_util';
 import Modal from './modals/modal';
+import Expenses from './expenses/expenses';
 
 const App = () => (
   <div>
@@ -12,6 +13,7 @@ const App = () => (
     <Switch>
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <ProtectedRoute path="/dashboard" component={Dashboard} />
+      <ProtectedRoute path="/all" component={Expenses} />
       <AuthRoute exact path="/" component={Splash} />
       <Redirect to="/" />
     </Switch>

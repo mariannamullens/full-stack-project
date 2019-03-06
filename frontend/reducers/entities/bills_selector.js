@@ -1,0 +1,46 @@
+export const readableBill = (bill, state) => {
+  let friendlyBill = Object.assign(bill);
+  let friendlyCreatedAt = new Date(bill.createdAt);
+  friendlyBill.createdAtMonth = friendlyCreatedAt.toLocaleString('en-us', { month: 'short' });
+  friendlyBill.createdAtDay = friendlyCreatedAt.getDate();
+  friendlyBill.createdAtYear = friendlyCreatedAt.getFullYear();
+  friendlyBill.payer = state.entities.users[bill.payerId];
+  friendlyBill.shares = readableShares(bill, state);
+  friendlyBill.creator = state.entities.users[bill.creatorId];
+  friendlyBill.amount = parseFloat(friendlyBill.amount).toFixed(2);
+  friendlyBill.lentBorrowedContext = lentBorrowedContext(bill, state);
+  return friendlyBill;
+};
+
+export const readableShares = (bill, { entities: { userBillShares, users }}) => {
+  let billShares = Object.values(userBillShares).filter( share => share.billId === bill.id );
+  billShares.forEach( share => {
+    share.user = users[share.userId]
+    share.amount = parseFloat(share.amount).toFixed(2);
+  });
+  return billShares;
+};
+
+export const lentBorrowedContext = (bill, state) => {
+  let context = { text: "", amount: "", paidText: "" };
+  if (bill.payerId === state.session.currentUserId) {
+    context.text = "you lent";
+    context.amount = currentUserLent(bill, state);
+    context.paidText = "you paid";
+  } else {
+    context.text = `you borrowed`;
+    context.amount = currentUserShare(bill, state);
+    context.paidText = `${state.entities.users[bill.payerId].name} paid`;
+  }
+  return context;
+};
+
+export const currentUserShare = (bill, state) => {
+  let objArr = readableShares(bill, state).filter(share => share.userId === state.session.currentUserId)
+  return objArr[0] ? objArr[0].amount : "0.00";
+};
+
+export const currentUserLent = (bill, state) => {
+  let share = parseFloat(currentUserShare(bill, state));
+  return (bill.amount - share).toFixed(2);
+};

@@ -1,0 +1,105 @@
+.middle-expenses {
+  width: 558px;
+  height: 800px;
+  border-left: 1px solid $gray;
+  border-right: 1px solid $gray;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
+
+.left-nav {
+  width: 200px;
+  height: 800px;
+}
+
+.right-panel {
+  width: 200px;
+  height: 800px;
+}
+
+.expenses {
+  display: flex;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+}
+
+.expenses-header {
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  height: 50px;
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px 10px;
+  font-family: 'Lato', sans-serif;
+}
+
+.expense-summary {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.expense-summary:hover {
+  background: #f8f8f8;
+}
+
+.expense-summary .date {
+  color: #999;
+  text-transform: uppercase;
+  margin: 0 5px;
+}
+
+.expense-summary .day {
+  font-size: 20px
+}
+
+.expense-summary .month {
+  font-size: 10px
+}
+
+.expense-summary h3 {
+  font-size: 16px;
+  font-weight: bold;
+  width: 50%;
+}
+
+.expense-summary h4 {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.expense-summary h5 {
+  color: #aaa;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+}
+
+.expense-summary .lent {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.expense-summary .paid {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.expense-summary:hover button {
+  color: #c00;
+  opacity: 1;
+}
+
+.expense-summary button {
+  opacity: 0;
+}

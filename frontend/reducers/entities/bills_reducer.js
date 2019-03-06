@@ -10,7 +10,7 @@ const billsReducer = (oldState = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      return action.bills;
+      return action.bills ? action.bills : {};
     case REMOVE_BILL:
       delete newState[action.billId];
       return newState;
