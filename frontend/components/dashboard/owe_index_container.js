@@ -23,7 +23,6 @@ const OweIndex = props => {
 };
 
 const OweIndexItem = props => {
-  console.log(props.friendObj)
   return (
     <div className="owe-index-item">
       <img className="round-icon" src={window.images.cactus} />

@@ -5,6 +5,8 @@ class Api::BillsController < ApplicationController
   def create
     @bill = Bill.new(bill_params)
     @bill.creator_id = current_user.id
+    user_shares = params[:bill][:shares].values
+    @bill.user_bill_shares.build(user_shares)
 
     if @bill.save
       render 'api/bills/show'

@@ -20,5 +20,7 @@ class Bill < ApplicationRecord
   has_many :users,
     through: :user_bill_shares,
     source: :user
+  
+  accepts_nested_attributes_for :users, :user_bill_shares
 
 end

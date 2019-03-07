@@ -1,0 +1,90 @@
+.modal-child .bill {
+  width: 350px;
+  height: 394px;
+  top: 50%;
+  border: 1px solid #999;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.3);
+}
+
+.modal-child .bill header {
+  background: $main-green;
+  color: white;
+  padding: 10px;
+  border-bottom: 1px solid #36977b;
+  text-shadow: 0 -1px 0 #318a71;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal-child .associated-list {
+  display: flex;
+  border-bottom: 1px solid #bbb;
+  padding: 4px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.modal-child .associated-input input {
+  outline: none;
+  border: none;
+}
+
+.associated-list h3 {
+  align-self: flex-start;
+  margin: 6px;
+  white-space: nowrap;
+
+}
+
+.associated-list li {
+  background: #eee;
+  border: 1px solid #bbb;
+  border-radius: 15px;
+  font-size: 14px;
+  max-width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 8px;
+  margin: 3px;
+}
+
+.associated-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px;
+  border-bottom: 1px solid #bbb;
+  width: 95%;
+}
+
+button.association-button {
+  padding: 5px;
+  font-size: 14px;
+  width: 100%;
+  align-self: flex-start;
+}
+
+button.association-button:hover {
+  background: #eee;
+}
+
+.modal-child .i-border i {
+  padding: 25px 8px;
+  background: #eee;
+  font-size: 32px;
+  color: black;
+  text-align: center;
+  text-justify: center;
+  border: 1px solid #ccc;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+// .modal-child .i-border {
+//   background: white;
+//   padding: 4px;
+//   border: 1px solid #ccc;
+//   // display: inline-block;
+// }
+

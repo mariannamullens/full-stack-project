@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { readableBill, readableShares, currentUserShare, currentUserLent, lentBorrowedContext } from './reducers/entities/bills_selector';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -23,11 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // TOFIX: TEST
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.readableBill = readableBill;
-    window.readableShares = readableShares;
-    window.currentUserShare = currentUserShare;
-    window.currentUserLent = currentUserLent;
-    window.lentBorrowedContext = lentBorrowedContext;
   // testing
 
   ReactDOM.render(<Root store={store} />, root)

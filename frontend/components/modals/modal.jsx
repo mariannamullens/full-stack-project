@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import AddFriendModalContainer from './add_friend_modal_container';
+import AddBillModalContainer from './add_bill_modal_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -11,6 +12,9 @@ function Modal({ modal, closeModal }) {
   switch (modal) {
     case 'addFriend':
       component = <AddFriendModalContainer />;
+      break;
+    case 'addBill':
+      component = <AddBillModalContainer />;
       break;
     default:
       return null;

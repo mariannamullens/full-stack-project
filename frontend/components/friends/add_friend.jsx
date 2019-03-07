@@ -8,14 +8,13 @@ class AddFriend extends React.Component {
   render() {
     return(
       this.props.openModal
-    // <div className="add-friend">+ add</div>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => ({
   modalType: 'addFriend'
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   createFriend: friend => dispatch(createFriend(friend)),

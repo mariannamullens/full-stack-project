@@ -1,4 +1,5 @@
 import React from 'react';
+import AddBill from '../expenses/add_bill';
 
 class MiddleDashHeader extends React.Component {
   render() {
@@ -7,6 +8,7 @@ class MiddleDashHeader extends React.Component {
       <div className="middle-dash-header">
         <div className="upper-header">
           <h2>Dashboard</h2>
+          <AddBill />
         </div>
         <div className="aggregates">
           <div className="aggregate-type">
