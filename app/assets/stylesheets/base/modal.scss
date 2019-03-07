@@ -108,3 +108,28 @@
   text-shadow: 0 1px 0 #ffffff;
   opacity: .2;
 }
+
+.second-modal {
+  position: absolute;
+  top: 50px;
+  left: 525px;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 300px;
+  height: 100px;
+  border-radius: 4px;
+  font-family: 'Lato', 'sans-serif';
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  border: 1px solid #9F9F9F;
+  z-index: 99;
+}
+
+.second-modal header {
+  background: $main-green;
+  color: white;
+  padding: 10px;
+  border-bottom: 1px solid #36977b;
+  text-shadow: 0 -1px 0 #318a71;
+  font-size: 18px;
+  font-weight: bold;
+}

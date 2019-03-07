@@ -1,5 +1,6 @@
 import React from 'react';
 import AddBillUsersSelector from './add_bill_users_selector';
+import PaidSelector from './paid_selector';
 
 class AddBillModal extends React.Component {
   constructor(props) {
@@ -11,10 +12,12 @@ class AddBillModal extends React.Component {
       note: "",
       payer_id: "",
       shares: [],
-      associatedFriends: []
+      associatedFriends: [],
+      openPaidSelector: false
     };
 
     this.addAssociatedFriend = this.addAssociatedFriend.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   addAssociatedFriend(friend) {
@@ -32,13 +35,20 @@ class AddBillModal extends React.Component {
     };
   }
 
+  handleClick(e) {
+    e.preventDefault();
+    this.setState({ openPaidSelector: true })
+  }
+
   render() {
     let { friends } = this.props;
     //who should pay => modal?
     // auto split equally
     return (
       <div className="modal-child bill">
+
         <header>Add a bill</header>
+
         <form >
           <AddBillUsersSelector 
             friends={friends}
@@ -66,8 +76,21 @@ class AddBillModal extends React.Component {
           </div>
 
           <div className="form-split-context">
-            
+            <h4>
+              Paid by
+              <button onClick={this.handleClick}>
+                you
+              </button>
+              and split
+              <span className="green-text">
+                equally
+              </span>
+            </h4>
           </div>
+
+          <PaidSelector 
+            openPaidSelector={this.state.openPaidSelector}
+          />
         </form>
       </div>
     );
