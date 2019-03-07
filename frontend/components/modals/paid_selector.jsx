@@ -5,6 +5,7 @@ const PaidSelector = props => {
     <button
       onClick={props.addPayerContext(user)}
       className="paid-button"
+      key={user.id}
     >
       {user.name}
     </button>

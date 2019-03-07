@@ -15,7 +15,7 @@ const billsReducer = (oldState = {}, action) => {
       delete newState[action.billId];
       return newState;
     case RECEIVE_BILL:
-      newState[action.billId] = action.bills[billId];
+      newState[action.billId] = action.bills[action.billId];
       return newState;
     default:
       return oldState;

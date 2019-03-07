@@ -10,6 +10,7 @@ class AddBillUsersSelector extends React.Component {
     };
 
     this.handleInput = this.handleInput.bind(this);
+    this.handleDropdownClick = this.handleDropdownClick.bind(this);
   }
 
   filteredFriends () {
@@ -29,9 +30,18 @@ class AddBillUsersSelector extends React.Component {
     );
   }
 
+  handleDropdownClick(friend) {
+    return (e) => {
+      this.setState({ searchStr: "", showDropdown: false });
+      this.props.addAssociatedFriend(friend);
+    }
+  }
+
   render () {
     let associatedFriends = this.props.associatedFriends.map( friend => (
-      <li>{friend.name}</li>
+      <li key={friend.id}>
+        {friend.name}
+      </li>
     ))
 
     return (
@@ -44,7 +54,7 @@ class AddBillUsersSelector extends React.Component {
 
         <input 
           onChange={this.handleInput}
-          value={this.searchStr}
+          value={this.state.searchStr}
           placeholder="Enter names"
         />
       </div>
@@ -52,7 +62,7 @@ class AddBillUsersSelector extends React.Component {
       <UserDropdown 
         showDropdown={this.state.showDropdown}
         filteredFriends={this.filteredFriends()}
-        addAssociatedFriend={this.props.addAssociatedFriend}
+        handleDropdownClick={this.handleDropdownClick}
       />
     </div>
     )
@@ -65,8 +75,9 @@ const UserDropdown = props => {
   } else {
     let friends = props.filteredFriends.map( friend => (
       <button 
-        onClick={props.addAssociatedFriend(friend)}
+        onClick={props.handleDropdownClick(friend)}
         className="association-button"
+        key={friend.id}
       >
         {friend.name}
       </button>

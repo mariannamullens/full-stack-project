@@ -1,9 +1,12 @@
 .modal-child .bill {
   width: 350px;
-  height: 394px;
+  min-height: 394px;
   top: 50%;
   border: 1px solid #999;
   box-shadow: 0px 2px 8px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  // overflow: hidden;
 }
 
 .modal-child .bill header {
@@ -17,6 +20,7 @@
 }
 
 .modal-child .associated-list {
+  position: relative;
   display: flex;
   border-bottom: 1px solid #bbb;
   padding: 4px;
@@ -50,19 +54,22 @@
 }
 
 .associated-dropdown {
+  position: absolute;
+  background: white;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  text-align: start;
   padding: 5px;
   border-bottom: 1px solid #bbb;
   width: 95%;
 }
 
 button.association-button {
-  padding: 5px;
-  font-size: 14px;
   width: 100%;
-  align-self: flex-start;
+  display: block;
+  text-align: start;
+  padding: 10px;
 }
 
 button.association-button:hover {
@@ -81,10 +88,102 @@ button.association-button:hover {
   box-sizing: border-box;
 }
 
-// .modal-child .i-border {
-//   background: white;
-//   padding: 4px;
-//   border: 1px solid #ccc;
-//   // display: inline-block;
-// }
+.modal-child .i-border {
+  background: white;
+  padding: 4px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  margin-right: 16px;
+}
 
+.second-modal button {
+  width: 100%;
+  display: block;
+  text-align: start;
+  padding: 10px;
+}
+
+.second-modal button:hover {
+  background: #eee;
+}
+
+.middle-form {
+  display: flex;
+  margin: 10px;
+}
+
+.middle-form-inputs input {
+  outline: none;
+  border: none;
+  // border-bottom: 1px dashed #ccc;
+  color: #333;
+  font-family: 'Lato', 'sans-serif';
+  max-width: 180px;
+}
+
+.middle-form-inputs {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+.middle-form .description {
+  font-size: 20px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.middle-form .amount {
+  border-bottom: 1px dashed #ccc;
+  display: flex;
+  align-items: baseline;
+}
+
+.middle-form label.amount {
+  font-size: 20px;
+}
+
+.middle-form .amount input {
+  font-size: 36px;
+  margin-left: 10px;
+}
+
+.middle-form .description::placeholder {
+  font-size: 20px;
+  font-family: 'Lato', 'sans-serif';
+  color: #ccc;
+}
+
+.middle-form .amount::placeholder {
+  font-size: 20px;
+  font-family: 'Lato', 'sans-serif';
+  color: #ccc;
+}
+
+.form-split-context {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.form-split-context .green-text {
+  margin: 3px; 
+  color: $main-green;
+  background: #eee;
+  border: 1px dashed #ccc;
+  padding: 3px;
+  border-radius: 10px;
+}
+
+input.bill-submit {
+  font-size: 15px;
+  border-radius: 5px;
+  background: #5cc5a7;
+  color: #fff;
+  text-shadow: 0 -1px 0px #318a71;
+  width: 59px;
+  height: 35px;
+  align-self: flex-end;
+  margin: 8px;
+}

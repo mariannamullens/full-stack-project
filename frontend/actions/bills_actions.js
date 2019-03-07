@@ -36,10 +36,11 @@ export const updateBill = bill => dispatch => {
     );
 };
 
-const receiveBill = ({ bills, userBillShares }) => ({
+const receiveBill = ({ bills, userBillShares, billId }) => ({
   type: RECEIVE_BILL,
   bills,
-  userBillShares
+  userBillShares,
+  billId
 });
 
 const removeBill = billId => ({

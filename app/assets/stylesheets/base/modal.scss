@@ -111,17 +111,17 @@
 
 .second-modal {
   position: absolute;
-  top: 50px;
-  left: 525px;
-  transform: translate(-50%, -50%);
+  top: 0px;
+  left: 375px;
   background: white;
   width: 300px;
-  height: 100px;
+  min-height: 100px;
   border-radius: 4px;
   font-family: 'Lato', 'sans-serif';
   box-shadow: 0 1px 4px rgba(0,0,0,0.4);
   border: 1px solid #9F9F9F;
   z-index: 99;
+  // overflow: hidden;
 }
 
 .second-modal header {
