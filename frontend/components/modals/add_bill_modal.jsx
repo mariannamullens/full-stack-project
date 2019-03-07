@@ -10,14 +10,16 @@ class AddBillModal extends React.Component {
       description: "",
       amount: "",
       note: "",
-      payer_id: "",
+      payerId: this.props.currentUser.id,
       shares: [],
       associatedFriends: [],
-      openPaidSelector: false
+      openPaidSelector: false,
+      payerName: "you"
     };
 
     this.addAssociatedFriend = this.addAssociatedFriend.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.addPayerContext = this.addPayerContext.bind(this);
   }
 
   addAssociatedFriend(friend) {
@@ -29,6 +31,12 @@ class AddBillModal extends React.Component {
     };
   }
 
+  addPayerContext(user) {
+    return () => {
+      this.setState({ payerId: user.id, payerName: user.name });
+    };
+  }
+
   handleInput(field) {
     return (e) => {
       this.setState({ [field]: e.target.value });
@@ -37,7 +45,7 @@ class AddBillModal extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    this.setState({ openPaidSelector: true })
+    this.setState({ openPaidSelector: true });
   }
 
   render() {
@@ -79,7 +87,7 @@ class AddBillModal extends React.Component {
             <h4>
               Paid by
               <button onClick={this.handleClick}>
-                you
+                {this.state.payerName}
               </button>
               and split
               <span className="green-text">
@@ -90,6 +98,8 @@ class AddBillModal extends React.Component {
 
           <PaidSelector 
             openPaidSelector={this.state.openPaidSelector}
+            associatedUsers={[...this.state.associatedFriends, this.props.currentUser]}
+            addPayerContext={this.addPayerContext}
           />
         </form>
       </div>

@@ -6,6 +6,7 @@ import { selectFriends } from '../../reducers/entities/friends_selector';
 
 const mapStateToProps = state => ({
   friends: selectFriends(state),
+  currentUser: state.entities.users[state.session.currentUserId],
 });
 
 const mapDispatchToProps = dispatch => ({
