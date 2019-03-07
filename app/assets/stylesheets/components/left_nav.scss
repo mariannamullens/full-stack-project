@@ -1,0 +1,44 @@
+div.dash-link {
+  text-decoration: none;
+  color: #999;
+  margin: 11px 0 0;
+  border-left: 6px solid #fff;
+  padding: 3px 8px 10px 8px;
+  width: 150px;
+}
+
+a.router-link {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.dash-link:hover {
+  background: #eee;
+}
+
+.expenses-link:hover {
+  background: #eee;
+}
+
+div.expenses-link {
+  color: #999;
+  border-left: 6px solid #fff;
+  padding: 3px 8px 10px 8px;
+  font-size: 16px;
+  width: 150px;
+}
+
+.router-link {
+  text-decoration: none;
+}
+
+.dash-link img {
+  height: 15px;
+  width: 15px;
+  filter: grayscale(100%);
+  margin-right: 5px;
+}
+
+.expenses-link i {
+  margin-right: 5px;
+}
