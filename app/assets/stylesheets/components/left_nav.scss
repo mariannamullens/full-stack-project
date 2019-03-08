@@ -5,6 +5,26 @@ div.dash-link {
   border-left: 6px solid #fff;
   padding: 3px 8px 10px 8px;
   width: 150px;
+  filter: grayscale(100%);
+}
+
+div.expenses-link {
+  color: #999;
+  border-left: 6px solid #fff;
+  padding: 3px 8px 10px 8px;
+  font-size: 16px;
+  width: 150px;
+}
+
+div.dash-link.color {
+  filter: none;
+  color: $main-green;
+  border-left: 6px solid $main-green;
+}
+
+div.expenses-link.color {
+  color: $main-green;
+  border-left: 6px solid $main-green;
 }
 
 a.router-link {
@@ -20,14 +40,6 @@ a.router-link {
   background: #eee;
 }
 
-div.expenses-link {
-  color: #999;
-  border-left: 6px solid #fff;
-  padding: 3px 8px 10px 8px;
-  font-size: 16px;
-  width: 150px;
-}
-
 .router-link {
   text-decoration: none;
 }
@@ -35,7 +47,6 @@ div.expenses-link {
 .dash-link img {
   height: 15px;
   width: 15px;
-  filter: grayscale(100%);
   margin-right: 5px;
 }
 

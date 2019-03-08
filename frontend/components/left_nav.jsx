@@ -1,20 +1,27 @@
 import React from 'react';
 import FriendsIndexContainer from './friends/friends_index_container';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 class LeftNav extends React.Component {
+
   render() {
+    let onAll = this.props.location.pathname === "/all" ? "color" : "";
+    let onDash = this.props.location.pathname === "/dashboard" ? "color" : "";
+    console.log(onAll);
+
     return (
       <div className="left-nav">
-        <div className="dash-link">
+        <div className={`dash-link ${onDash}`}>
           <Link to="/dashboard" className="router-link">
             <img src={window.images.banana} />
             Dashboard
           </Link>
         </div>
-        <div className="expenses-link">
+        <div className={`expenses-link ${onAll}`}>
           <Link to="/all" className="router-link">
-            <i class="fas fa-list-ul"></i>
+            <i className="fas fa-list-ul"></i>
             All expenses
           </Link>
         </div>
@@ -24,4 +31,6 @@ class LeftNav extends React.Component {
   }
 };
 
-export default LeftNav;
+export default withRouter(LeftNav);
+
+// export default LeftNav;

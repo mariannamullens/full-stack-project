@@ -1,6 +1,6 @@
 import React from 'react';
 import ExpensesHeader from './expenses_header';
-import ExpensesIndexContainer from './expenses_index_container';
+import { ExpensesIndexContainer } from './expenses_index_container';
 
 class MiddleExpenses extends React.Component {
   render() {

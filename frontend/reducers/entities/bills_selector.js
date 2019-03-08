@@ -51,3 +51,21 @@ export const currentUserLent = (bill, state) => {
   let share = parseFloat(currentUserShare(bill, state));
   return (bill.amount - share).toFixed(2);
 };
+
+export const friendBills = (state, id) => {
+  let readableBillsArr = [];
+  Object.values(state.entities.bills).forEach( bill => {
+    let friendlyBill = readableBill(bill, state);
+    if (friendlyBill.creator.id === id || friendlyBill.payer.id === id) {
+      readableBillsArr.push(bill);
+      return;
+    }
+    friendlyBill.shares.forEach( share => {
+      if (share.userId === id) {
+        readableBillsArr.push(bill);
+        return;
+      }
+    });
+  });
+  return readableBillsArr;
+};

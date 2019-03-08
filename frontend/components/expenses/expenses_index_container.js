@@ -2,7 +2,7 @@ import React from 'react';
 import ExpenseIndexItemContainer from './expenses_index_item_container';
 import { connect } from 'react-redux';
 
-const ExpensesIndex = props => {
+export const ExpensesIndex = props => {
   const expenses = props.bills.map( bill => (
     <ExpenseIndexItemContainer
       bill={bill}
@@ -14,8 +14,11 @@ const ExpensesIndex = props => {
   );
 };
 
-const mapStateToProps = ({ entities: { bills }}) => ({
+const mapStateToProps = ({ entities: { bills }}, ownProps) => {
+  return {
   bills: Object.values(bills),
-});
+  }
+};
 
-export default connect(mapStateToProps)(ExpensesIndex);
+// export default connect(mapStateToProps)(ExpensesIndex);
+export const ExpensesIndexContainer = connect(mapStateToProps)(ExpensesIndex);
