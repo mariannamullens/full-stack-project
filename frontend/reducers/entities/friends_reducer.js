@@ -7,7 +7,7 @@ const friendsReducer = (oldState = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      return action.friends;
+      return action.friends ? action.friends : {};
     case RECEIVE_FRIEND:
       return Object.assign({}, newState, action.friendInfo);
     default:
