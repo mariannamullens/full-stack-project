@@ -1,6 +1,6 @@
 # CHITWISE
 
-Chitwise is a clone of the bill sharing app [Splitwise](https://secure.splitwise.com/) built using Rails, PostgreSQL, React and Redux. Chitwise allows you to share bills with friends, keeping track of a running total per friend so you don't have to keep track of individual bill amounts.
+Chitwise is a clone of the bill sharing app [Splitwise](https://secure.splitwise.com/) built using Rails, PostgreSQL, React and Redux. Chitwise allows you to share bills with friends and calculates a running total per friend so you don't have to keep track of individual bill amounts.
 
 Visit Chitwise's [live site](https://chitwise.herokuapp.com/).
 
@@ -8,8 +8,8 @@ Visit Chitwise's [live site](https://chitwise.herokuapp.com/).
 
 ## Features
 
-* User authentication
-* Add friends
+* Secure frontend to backend user auth using BCrypt
+* Add and view friends, and add friends to bills
 * Add bills and view bill summary and details
 * View aggregate totals per friend on Dashboard
 
@@ -24,7 +24,6 @@ Because this was my first full stack project, I learned a tremendous amount whil
 When it came time to work with each bill's detail, the information pulled from my Redux state wasn't quite as friendly as I'd like. I decided to make a `readableBill` function (nested in a bill selector), creating an API for my bill. In my component, I could pull things like created at month and day, allowing for more modular use.
 
 ```
-
 export const readableBill = (bill, state) => {
   let friendlyBill = Object.assign(bill);
   let friendlyCreatedAt = new Date(bill.createdAt);
@@ -38,10 +37,26 @@ export const readableBill = (bill, state) => {
   friendlyBill.lentBorrowedContext = lentBorrowedContext(bill, state);
   return friendlyBill;
 };
+```
+`readableBill` relied on `lentBorrwedContext` for conditional text rendering, depending on who paid the bill, and who owed for the bill.
 
 ```
-
-`readableBill` also allowed for conditional text rendering, depending on who paid the bill, and who owed for the bill.
+export const lentBorrowedContext = (bill, state) => {
+  let context = { text: "", amount: "", paidText: "" };
+  if (bill.payerId === state.session.currentUserId) {
+    context.text = "you lent";
+    context.amount = currentUserLent(bill, state);
+    context.paidText = "you paid";
+    context.shareText = `You paid ${bill.amount} and owe ${currentUserShare(bill, state)}`;
+  } else {
+    context.text = `you borrowed`;
+    context.amount = currentUserShare(bill, state);
+    context.paidText = `${state.entities.users[bill.payerId].name} paid`;
+    context.shareText = `${state.entities.users[bill.payerId].name} paid ${bill.amount} and owes ${otherUserShare(bill, state, bill.payerId)}`;
+  }
+  return context;
+};
+```
 
 ![conditional rendering](https://github.com/mariannamullens/full-stack-project/blob/master/app/assets/images/readme_conditional.png)
 
