@@ -1,24 +1,5 @@
-# README
+# CHITWISE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Chitwise is a clone of the bill sharing app [Splitwise](https://secure.splitwise.com/). Chitwise allows you to share bills with friends, with a running total per friend so you don't have to keep track of individual bill amounts.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Visit Chitwise's [live site](https://chitwise.herokuapp.com/).

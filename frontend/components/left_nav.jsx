@@ -1,7 +1,6 @@
 import React from 'react';
 import FriendsIndexContainer from './friends/friends_index_container';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 class LeftNav extends React.Component {
@@ -32,5 +31,3 @@ class LeftNav extends React.Component {
 };
 
 export default withRouter(LeftNav);
-
-// export default LeftNav;
