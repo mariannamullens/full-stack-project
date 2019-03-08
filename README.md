@@ -1,6 +1,6 @@
 # CHITWISE
 
-Chitwise is a clone of the bill sharing app [Splitwise](https://secure.splitwise.com/) built using Rails, PostgreSQL, React and Redux. Chitwise allows you to share bills with friends, with a running total per friend so you don't have to keep track of individual bill amounts.
+Chitwise is a clone of the bill sharing app [Splitwise](https://secure.splitwise.com/) built using Rails, PostgreSQL, React and Redux. Chitwise allows you to share bills with friends, keeping track of a running total per friend so you don't have to keep track of individual bill amounts.
 
 Visit Chitwise's [live site](https://chitwise.herokuapp.com/).
 
@@ -8,16 +8,16 @@ Visit Chitwise's [live site](https://chitwise.herokuapp.com/).
 
 ## Features
 
-Chitwise was built in ten days. I prioritized a compact feature set over feature sprawl, but there's a ton of interesting features yet to implement. Those can be found in the feature backlog below.
-
 * User authentication
 * Add friends
 * Add bills and view bill summary and details
 * View aggregate totals per friend on Dashboard
 
+Chitwise was built in ten days. I prioritized a compact feature set over feature sprawl, but there's a ton of interesting features yet to implement. Those can be found in the feature backlog below.
+
 ## Coding joys and challenges
 
-This project was a labor of love, and of learning. Some of my favorite moments were, perhaps, small ones.
+Because this was my first full stack project, I learned a tremendous amount while developing Chitwise. Some of my favorite moments were small victories, or challenges that compelled me (and continue to compel me) towards additional research. 
 
 ### A more friendly bill
 
