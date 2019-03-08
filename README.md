@@ -57,7 +57,7 @@ export const lentBorrowedContext = (bill, state) => {
     context.paidText = `${state.entities.users[bill.payerId].name} paid`;
     context.shareText = `${state.entities.users[bill.payerId].name} paid ${bill.amount} and owes ${otherUserShare(bill, state, bill.payerId)}`;
   }
-  
+
   return context;
 };
 ```
@@ -66,7 +66,11 @@ export const lentBorrowedContext = (bill, state) => {
 
 ### Danger Decimals
 
-During the project I was hyperaware of the dangers of decimal precision when it came to monetary calculations. I relied on the decimal datatype in my PostgreSQL database, and used [decimal.js](https://github.com/MikeMcl/decimal.js/) for my frontend calculations. I look forward to researching a more comprehensive solution for decimal and monetary handling, hopefully one that doesn't rely on .toFixed(2)!
+During the project I was hyperaware of the dangers of decimal precision when it came to monetary calculations:
+
+![float calculation](https://github.com/mariannamullens/full-stack-project/blob/master/app/assets/images/float_calculation.png)
+
+ I relied on the decimal datatype in my PostgreSQL database (which ActiveRecord converts to BigDecimal to maintain precision), and used [decimal.js](https://github.com/MikeMcl/decimal.js/) for my frontend calculations. I look forward to researching a more comprehensive solution for decimal and monetary handling, hopefully one that doesn't rely on .toFixed(2) on the frontend!
 
 ## Feature Backlog
 
