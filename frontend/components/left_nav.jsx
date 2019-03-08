@@ -8,7 +8,6 @@ class LeftNav extends React.Component {
   render() {
     let onAll = this.props.location.pathname === "/all" ? "color" : "";
     let onDash = this.props.location.pathname === "/dashboard" ? "color" : "";
-    console.log(onAll);
 
     return (
       <div className="left-nav">

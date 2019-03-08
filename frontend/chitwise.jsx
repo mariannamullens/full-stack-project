@@ -20,11 +20,5 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
 
-  // TOFIX: TEST
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
-    window.friendBills = friendBills;
-  // testing
-
   ReactDOM.render(<Root store={store} />, root)
 });
