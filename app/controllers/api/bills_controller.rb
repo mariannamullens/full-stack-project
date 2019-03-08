@@ -1,6 +1,4 @@
 class Api::BillsController < ApplicationController
-    # TOFIX: TESTING!
-  skip_before_action :verify_authenticity_token
 
   def create
     @bill = Bill.new(bill_params)

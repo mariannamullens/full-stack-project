@@ -1,7 +1,4 @@
 class Api::FriendsController < ApplicationController
-    # TOFIX: TESTING!
-  skip_before_action :verify_authenticity_token
-
 
   def create
     @user = current_user

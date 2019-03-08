@@ -1,6 +1,4 @@
 class Api::SessionsController < ApplicationController
-  # TOFIX: TESTING!
-  skip_before_action :verify_authenticity_token
 
   def create
     @user = User.includes(:friends).find_by_credentials(
