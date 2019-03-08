@@ -3,6 +3,7 @@ import { Decimal } from 'decimal.js';
 export const readableBill = (bill, state) => {
   let friendlyBill = Object.assign(bill);
   let friendlyCreatedAt = new Date(bill.createdAt);
+
   friendlyBill.createdAtMonth = friendlyCreatedAt.toLocaleString('en-us', { month: 'short' });
   friendlyBill.createdAtDay = friendlyCreatedAt.getDate();
   friendlyBill.createdAtYear = friendlyCreatedAt.getFullYear();
@@ -11,6 +12,7 @@ export const readableBill = (bill, state) => {
   friendlyBill.creator = state.entities.users[bill.creatorId];
   friendlyBill.amount = new Decimal(friendlyBill.amount).toFixed(2);
   friendlyBill.lentBorrowedContext = lentBorrowedContext(bill, state);
+
   return friendlyBill;
 };
 
@@ -25,6 +27,7 @@ export const readableShares = (bill, { entities: { userBillShares, users }}) => 
 
 export const lentBorrowedContext = (bill, state) => {
   let context = { text: "", amount: "", paidText: "" };
+
   if (bill.payerId === state.session.currentUserId) {
     context.text = "you lent";
     context.amount = currentUserLent(bill, state);
@@ -36,6 +39,7 @@ export const lentBorrowedContext = (bill, state) => {
     context.paidText = `${state.entities.users[bill.payerId].name} paid`;
     context.shareText = `${state.entities.users[bill.payerId].name} paid ${bill.amount} and owes ${otherUserShare(bill, state, bill.payerId)}`;
   }
+  
   return context;
 };
 
