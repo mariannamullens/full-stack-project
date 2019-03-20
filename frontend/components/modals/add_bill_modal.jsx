@@ -52,7 +52,13 @@ class AddBillModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
     let { id, amount, associatedFriends, description, note, payerId } = this.state;
+
+    if (description === "") {
+      alert("Description can't be blank!");
+      return;
+    }
 
     //calculate share
     let associatedUsers = [...associatedFriends, this.props.currentUser];
