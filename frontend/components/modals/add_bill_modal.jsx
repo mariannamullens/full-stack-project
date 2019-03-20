@@ -7,14 +7,17 @@ class AddBillModal extends React.Component {
   constructor(props) {
     super(props);
 
+    let { id, description, amount, note, payerId, associatedFriends, payerName } = this.props;
+
     this.state = {
-      description: "",
-      amount: "0.00",
-      note: "",
-      payerId: this.props.currentUser.id,
-      associatedFriends: [],
+      description: description,
+      amount: amount,
+      note: note,
+      payerId: payerId,
+      associatedFriends: associatedFriends,
       openPaidSelector: false,
-      payerName: "you"
+      payerName: payerName,
+      id: id
     };
 
     this.addAssociatedFriend = this.addAssociatedFriend.bind(this);
@@ -49,7 +52,7 @@ class AddBillModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let { amount, associatedFriends, description, note, payerId } = this.state;
+    let { id, amount, associatedFriends, description, note, payerId } = this.state;
 
     //calculate share
     let associatedUsers = [...associatedFriends, this.props.currentUser];
@@ -60,9 +63,9 @@ class AddBillModal extends React.Component {
     let userShares = associatedUsers.map( user => (
       { user_id: user.id, amount: shareAmt }
     ));
-
-    this.props.createBill(
-      { amount: amount, description: description, note: note, payer_id: payerId, shares: userShares }
+    
+    this.props.billAction(
+      { amount: amount, description: description, note: note, payer_id: payerId, shares: userShares, id: id }
     );
   }
 

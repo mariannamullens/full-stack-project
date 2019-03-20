@@ -10,7 +10,12 @@ class ExpensesIndexItem extends React.Component {
   }
 
   openDetail () {
-    this.setState((state) => ({ showDetail: !state.showDetail }));
+    let { bill, setCurrentBillId, clearCurrentBillId } = this.props;
+
+    this.setState((state) => ({ showDetail: !state.showDetail }), () => {
+      this.state.showDetail ? setCurrentBillId(bill.id) : clearCurrentBillId();
+    });
+
   }
   
   render() {
