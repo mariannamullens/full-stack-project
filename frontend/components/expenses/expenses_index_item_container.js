@@ -1,8 +1,7 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import ExpensesIndexItem from './expenses_index_item';
 import { readableBill } from '../../reducers/entities/bills_selector';
-import { deleteBill } from '../../actions/bills_actions';
+import { deleteBill, clearCurrentBillId, setCurrentBillId } from '../../actions/bills_actions';
 
 const mapStateToProps = (state, ownProps ) => ({
   bill: readableBill(ownProps.bill, state)
@@ -10,7 +9,8 @@ const mapStateToProps = (state, ownProps ) => ({
 
 const mapDispatchToProps = dispatch => ({
   deleteBill: id => dispatch(deleteBill(id)),
-  updateBill: bill => dispatch(updateBill(bill)),
+  setCurrentBillId: id => dispatch(setCurrentBillId(id)),
+  clearCurrentBillId: () => dispatch(clearCurrentBillId()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExpensesIndexItem);

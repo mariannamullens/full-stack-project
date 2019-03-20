@@ -19,8 +19,12 @@ class Api::BillsController < ApplicationController
 
   def update
     @bill = Bill.find(params[:id])
+    user_shares = params[:bill][:shares].values
+    @bill.assign_attributes(bill_params)
+    @bill.user_bill_shares.clear
+    @bill.user_bill_shares.build(user_shares)
 
-    if @bill.update_attributes(bill_params)
+    if @bill.save
       render 'api/bills/show'
     else
       render json: @bill.errors.full_messages, status: 422

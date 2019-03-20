@@ -3,6 +3,8 @@ import * as ApiUtil from '../util/bills_api_util';
 export const RECEIVE_BILL_ERRORS = "RECEIVE_BILL_ERRORS";
 export const RECEIVE_BILL = "RECEIVE_BILL";
 export const REMOVE_BILL = "REMOVE_BILL";
+export const SET_CURRENT_BILL_ID = "SET_CURRENT_BILL_ID";
+export const CLEAR_CURRENT_BILL_ID = "CLEAR_CURRENT_BILL_ID";
 
 export const fetchBill = id => dispatch => {
   return ApiUtil.fetchBill(id)
@@ -51,4 +53,15 @@ const removeBill = billId => ({
 const receiveBillErrors = errors => ({
   type: RECEIVE_BILL_ERRORS,
   errors
+});
+
+export const setCurrentBillId = billId => {
+  return {
+  type: SET_CURRENT_BILL_ID,
+  billId
+  };
+};
+
+export const clearCurrentBillId = () => ({
+  type: CLEAR_CURRENT_BILL_ID,
 });

@@ -25,6 +25,14 @@ export const readableShares = (bill, { entities: { userBillShares, users }}) => 
   return billShares;
 };
 
+export const associatedFriends = (bill, state) => {
+  let currentUser = state.entities.users[state.session.currentUserId]
+
+  let shares = readableShares(bill, state);
+  let userNames = shares.map( share => share.user);
+  return userNames.filter(user => user !== currentUser);
+};
+
 export const lentBorrowedContext = (bill, state) => {
   let context = { text: "", amount: "", paidText: "" };
 
