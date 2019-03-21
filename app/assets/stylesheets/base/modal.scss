@@ -15,8 +15,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
-  width: 100px;
-  height: 100px;
   border-radius: 4px;
   font-family: 'Lato', 'sans-serif';
   box-shadow: 0 1px 4px rgba(0,0,0,0.4);
@@ -121,7 +119,6 @@
   box-shadow: 0 1px 4px rgba(0,0,0,0.4);
   border: 1px solid #9F9F9F;
   z-index: 99;
-  // overflow: hidden;
 }
 
 .second-modal header {

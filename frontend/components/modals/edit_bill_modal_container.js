@@ -18,6 +18,7 @@ const mapStateToProps = (state) => {
   associatedFriends: associatedFriends(bill, state),
   payerName: state.entities.users[bill.payerId].name,
   id: state.ui.currentBillId,
+  modalTitle: "Edit bill",
 }};
 
 const mapDispatchToProps = dispatch => ({
