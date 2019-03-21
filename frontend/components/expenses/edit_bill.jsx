@@ -8,11 +8,11 @@ const EditBill = props => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   openModal: (
     <button
       className="edit-bill"
-      onClick={() => dispatch(openModal('editBill'))}>
+      onClick={() => dispatch(openModal('editBill', ownProps.bill.id))}>
        Edit bill
     </button>
   )
