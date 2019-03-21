@@ -76,12 +76,15 @@ class AddBillModal extends React.Component {
   }
 
   render() {
-    let { friends } = this.props;
+    let { friends, modalTitle, closeModal } = this.props;
 
     return (
       <div className="modal-child bill">
 
-        <header>Add a bill</header>
+        <header>
+          {modalTitle}
+          <button onClick={closeModal}>X</button>
+        </header>
 
         <form onSubmit={this.handleSubmit}>
           <AddBillUsersSelector 

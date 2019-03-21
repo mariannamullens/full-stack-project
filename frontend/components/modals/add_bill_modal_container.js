@@ -14,6 +14,7 @@ const mapStateToProps = state => ({
   associatedFriends: [],
   payerName: "you",
   id: null,
+  modalTitle: "Add a bill",
 });
 
 const mapDispatchToProps = dispatch => ({
