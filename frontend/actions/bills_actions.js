@@ -54,14 +54,3 @@ const receiveBillErrors = errors => ({
   type: RECEIVE_BILL_ERRORS,
   errors
 });
-
-export const setCurrentBillId = billId => {
-  return {
-  type: SET_CURRENT_BILL_ID,
-  billId
-  };
-};
-
-export const clearCurrentBillId = () => ({
-  type: CLEAR_CURRENT_BILL_ID,
-});
